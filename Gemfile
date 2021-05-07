@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'simple_form', '~> 5.1'
 gem 'devise', '~> 4.8'
+gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 
 
 group :development, :test do

@@ -9,4 +9,7 @@ class RegistrationsController < Devise::RegistrationsController
         params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :current_password)
     end
 
+    def show
+        @user = User.friendly.find(params[:id])
+    end
 end

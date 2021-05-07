@@ -11,10 +11,6 @@ class PostsController < ApplicationController
   def show
   end
 
-  def user_posts
-    @posts = Post.all(params[:user_id])
-  end
-
   # GET /posts/new
   def new
     @post = current_user.posts.build
