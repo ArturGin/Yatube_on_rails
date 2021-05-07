@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_125734) do
+ActiveRecord::Schema.define(version: 2021_05_07_145531) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -23,12 +23,22 @@ ActiveRecord::Schema.define(version: 2021_05_07_125734) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "groups", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "slug"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["slug"], name: "index_groups_on_slug", unique: true
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text "post"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "used_id"
     t.integer "user_id"
+    t.integer "group_id"
   end
 
   create_table "users", force: :cascade do |t|
