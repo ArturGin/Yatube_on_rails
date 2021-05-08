@@ -1,0 +1,25 @@
+<% @posts.each do |post| %>
+    <div class="card mb-3 mt-1 shadow-sm">
+
+    <!-- Отображение картинки -->
+    <!-- Отображение текста поста -->
+    <div class="card-body">
+      <p class="card-text">
+        <!-- Ссылка на автора через @ -->
+        <a href="#!">
+          <strong class="d-block text-gray-dark">@<%= post.user.username %></strong>
+        </a>
+        <%= post.post %> <br>
+      </p>
+  
+          <!-- Ссылка на редактирование поста для автора -->
+          <% if user_signed_in? %>
+          <a class="btn btn-sm btn-info" href="#!" role="button">
+          <%= link_to 'Edit', edit_post_path(post) %>
+          </a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div> 
+<% end %>

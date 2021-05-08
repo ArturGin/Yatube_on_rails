@@ -1,12 +1,1 @@
-
-<tbody>
-<% for post in @user.posts %>
-  <tr>
-    <td><%= post.post %></td> <br>
-    <td><%= post.user.name %></td> <br>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
-  </tr>
-<% end %>
-</tbody>
+<%= render 'post_user', posts: @user.posts %>

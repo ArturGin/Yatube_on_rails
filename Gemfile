@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'simple_form', '~> 5.1'
 gem 'devise', '~> 4.8'
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
+gem 'kaminari', '~> 0.17.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
