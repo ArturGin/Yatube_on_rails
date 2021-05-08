@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A social-network project for getting my beak wet in Ruby on Rails.
 
-Things you may want to cover:
+Original written in Django: 
+https://github.com/ArturGin/hw04_tests
 
-* Ruby version
+A no thrill but solid foundation to get used to a new web-framework.
 
-* System dependencies
+Includes:
 
-* Configuration
+- Authorization
+- A bit of work setting up relational db
+- Testing
+- Frontend written in .erb
+- Bootstrap for CSS
 
-* Database creation
 
-* Database initialization
+What is my goal?
 
-* How to run the test suite
+To see how similar from a usability poing of view I can get this project to the original.
+Which would teach me the fundamentals of working with Ruby on Rails and show me areas in which I struggle
+p.s Its going to be Tests and Bootstrap, I can feel it. 
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
