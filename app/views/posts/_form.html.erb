@@ -16,10 +16,7 @@
     <%= form.text_area :post %>
   </div>
 
-
-  
-
- <%= form.select( :group_id, Group.all.each {|group| [group.title, group.id]}) -%> 
+  <%= collection_select(form, :group_id, Group.all, :id, :title) %>
 
   <div class="actions">
     <%= form.submit %>

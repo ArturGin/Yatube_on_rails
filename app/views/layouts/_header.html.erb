@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+<a class="navbar-brand" href="{% url 'posts:index' %}"><span style="color:red">Ya</span>tube</a>
+<nav class="my-2 my-md-0 mr-md-3">
+<% if user_signed_in? %>
+                        <p>
+							<strong> Пользователь: <%= current_user.name %></strong>
+							<small><%= current_user.username %></small>
+						</p>
+<a class="p-2 text-dark" href="#!">Новая запись</a>
+<a class="p-2 text-dark" href="#!">Изменить пароль</a>
+<a class="p-2 text-dark" href="#!">Выйти</a>
+<% else %>
+<a class="p-2 text-dark" href="#!">Войти</a> |
+<a class="p-2 text-dark" href="#!">Регистрация</a>
+<% end %>
+</nav>
+</nav> 
