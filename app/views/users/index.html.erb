@@ -1,0 +1,19 @@
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.posts.count %></td>
+        <td><%= user.username %></td>
+
+      </tr>
+    <% end %>
+  </tbody>

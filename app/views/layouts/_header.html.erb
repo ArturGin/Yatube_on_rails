@@ -1,18 +1,23 @@
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-<%= link_to "Yatube", root_path, class: "navbar-brand"%>
+
+<div style="margin-left:45px">
+<a class="navbar-brand" href= <%= root_path %>> <span style="color:red">Ya</span>tube</a>
+</div>
 <nav class="my-2 my-md-0 mr-md-3">
+<div style="margin-right:45px">
 <% if user_signed_in? %>
-                        <p>
-							<strong> Пользователь: <%= current_user.name %></strong>
-							<small><%= current_user.username %></small>
-						</p>
-                        
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn" %>
-<%= link_to "New Post", new_post_path, :class => "btn" %>
-<%= link_to "Change your personal info", edit_user_registration_path, :class => "btn" %>
+<a href="users/<%= current_user.name %>" class="btn btn-info">
+	Пользователь: <%= current_user.name %>
+</a>
+                     
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn btn-info" %>
+<%= link_to "New Post", new_post_path, :class => "btn btn-info" %>
+<%= link_to "Change your personal info", edit_user_registration_path, :class => "btn btn-info" %>
 <% else %>
-<%= link_to "Sign in", new_user_session_path, :class => "p-2 text-dark" %>
-<%= link_to 'Sign Up', new_user_registration_path %>
+
+	<%= link_to "Sign in", new_user_session_path, :class => "btn btn-info" %>
+	<%= link_to 'Sign Up', new_user_registration_path, :class => "btn btn-info"%>
+</div>
 <% end %>
 </nav>
 </nav> 

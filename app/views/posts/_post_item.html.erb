@@ -1,25 +1,40 @@
 <% @posts.each do |post| %>
-    <div class="card mb-3 mt-1 shadow-sm">
+<div class="container">
+    <div class="card mb-2 mt-1 shadow-sm" >
 
     <!-- Отображение картинки -->
     <!-- Отображение текста поста -->
     <div class="card-body">
       <p class="card-text">
         <!-- Ссылка на автора через @ -->
-        <a href="#!">
+        <a href="users/<%= post.user.username.downcase %>">
           <strong class="d-block text-gray-dark">@<%= post.user.username %></strong>
         </a>
-        <%= post.post %> <br>
+        <% if post.group %>
+        <a href="groups/<%= post.group.title.downcase %>">
+          <strong class="text-muted">#<%= post.group.title %></strong>
+        </a>
+        <% end %>
       </p>
+       
+      </p>
+      <p class="h2">
+      <%= post.post %>
+      </p> <br>
+      
+     
+        
   
           <!-- Ссылка на редактирование поста для автора -->
-          <% if user_signed_in? %>
-          <a class="btn btn-sm btn-info" href="#!" role="button">
-          <%= link_to 'Edit', edit_post_path(post) %>
+          <% if current_user == post.user %>
+          <%= link_to 'Edit', edit_post_path(post), :class=>"btn btn-sm btn-info" %>
           </a>
+
           <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  </div> 
+    </div> 
+
+</div>
 <% end %>

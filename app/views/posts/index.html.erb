@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<div class="container">
+    <div class="card">
+        <h1 class="card-header">Latest Posts</h1>
+    </div>
+</div>
 
-<%= render 'post_item', post: @posts %>
+    <%= render 'post_item', post: @posts %>
 
 
-<%= paginate @posts %>
+<%= paginate @posts%>
 

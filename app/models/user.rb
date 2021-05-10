@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :groups, dependent: :destroy
   
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :username, use: :slugged
 end

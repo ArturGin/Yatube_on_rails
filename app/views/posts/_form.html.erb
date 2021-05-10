@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
   <div class="col-md-8 p-5">
     <div class="card">
-      <div class="card-header">Новый Пост</div>
+
         <div class="card-body">
         <%= form_with(model: post) do |form| %>
           <% if post.errors.any? %>
@@ -16,16 +16,27 @@
             </div>
           <% end %>
         
-          <div class="field">
-            <%= form.label :post %>
-            <%= form.text_area :post %>
+    
+          <div class="mx-auto" style="width: 180px;">
+          Create a new post!
+            </div>
+            <%= form.text_area :post, class: "form-control form-control-lg" %>
+
+          
+            <div class="mx-auto" style="width: 200px;">
+                  Select a group (or not!)
+            </div>
+
+            <div align="center">
+            <%= arr = [nil]
+            for i in Group.all.ids
+              arr.push(i)
+            end
+            form.select :group_id, arr %>
           </div>
-        
-          <%= collection_select(form, :group_id, Group.all, :id, :title) %>
-        
-          <div class="actions">
-            <%= form.submit %>
           </div>
+            <%= form.submit class:"btn btn-primary"%>
+
         <% end %>
         </div>
       </div>
