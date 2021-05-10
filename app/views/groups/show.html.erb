@@ -1,27 +1,46 @@
-<p id="notice"><%= notice %></p>
+<% @group.posts.each do |post| %>
+<div class="container">
+    <div class="card mb-2 mt-1 shadow-sm" >
 
-<p>
-  <strong>Title:</strong>
-  <%= @group.title %>
-</p>
+    <!-- Отображение картинки -->
+    <!-- Отображение текста поста -->
+    <div class="card-body">
+      <p class="card-text">
+        <!-- Ссылка на автора через @ -->
 
-<p>
-  <strong>Description:</strong>
-  <%= @group.description %>
-</p>
+        <!-- Вот тут стоило сделать через link_to, но не смог понять как это грамотно сделать
+          потому что я использую gem чтобы можно переходить к профилю автора через его username -->
 
-<p>
-  <strong>Slug:</strong>
-  <%= @group.slug %>
-</p>
+        <a href="users/<%= post.user.username.downcase %>">
+          <strong class="d-block text-gray-dark">@<%= post.user.username %></strong>
+        </a>
 
-<tbody>
-<% for post in @group.posts %>
-  <tr>
-    <td><%= post.post %></td> <br>
-  </tr>
+  
+        <% if post.group %>
+        <a href="groups/<%= post.group.slug %>">
+          <strong class="text-muted">#<%= post.group.title %></strong>
+        </a>
+        <% end %>
+      </p>
+       
+      </p>
+      <p class="h2">
+      <%= post.post %>
+      </p> <br>
+      
+     
+        
+  
+          <!-- Ссылка на редактирование поста для автора -->
+          <% if current_user == post.user %>
+          <%= link_to 'Edit', edit_post_path(post), :class=>"btn btn-sm btn-info" %>
+          </a>
+
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+</div>
 <% end %>
-</tbody>
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>

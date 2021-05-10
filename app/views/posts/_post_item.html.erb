@@ -7,11 +7,17 @@
     <div class="card-body">
       <p class="card-text">
         <!-- Ссылка на автора через @ -->
+
+        <!-- Вот тут стоило сделать через link_to, но не смог понять как это грамотно сделать
+          потому что я использую gem чтобы можно переходить к профилю автора через его username -->
+
         <a href="users/<%= post.user.username.downcase %>">
           <strong class="d-block text-gray-dark">@<%= post.user.username %></strong>
         </a>
+
+  
         <% if post.group %>
-        <a href="groups/<%= post.group.title.downcase %>">
+        <a href="groups/<%= post.group.slug %>">
           <strong class="text-muted">#<%= post.group.title %></strong>
         </a>
         <% end %>

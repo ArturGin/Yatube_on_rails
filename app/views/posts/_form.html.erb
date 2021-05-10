@@ -27,14 +27,20 @@
                   Select a group (or not!)
             </div>
 
+            <!-- Чтобы добавлять в посты в группу нужно в форме передавать group_id
+            и я не знаю как сделать так чтобы показывалось title группы, но передавалось group_id-->
+
             <div align="center">
             <%= arr = [nil]
             for i in Group.all.ids
               arr.push(i)
             end
             form.select :group_id, arr %>
+
           </div>
+
           <br>
+
           <div align="center"> 
             <%= form.submit class:"btn btn-primary"%>
           </div>
