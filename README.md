@@ -11,7 +11,6 @@ Includes:
 
 - Authorization
 - A bit of work setting up relational db
-- Testing
 - Frontend written in .erb
 - Bootstrap for CSS
 
@@ -20,5 +19,5 @@ What is my goal?
 
 To see how similar from a usability poing of view I can get this project to the original.
 Which would teach me the fundamentals of working with Ruby on Rails and show me areas in which I struggle
-p.s Its going to be Tests and Bootstrap, I can feel it. 
+p.s Its going to be Bootstrap.
 

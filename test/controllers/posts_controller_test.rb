@@ -6,21 +6,16 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get posts_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_post_url
+    get root_path
     assert_response :success
   end
 
   test "should create post" do
     assert_difference('Post.count') do
-      post posts_url, params: { post: { post: @post.post } }
+      post posts_url, params: { post: { post: @post.post, user_id: 5 } }
     end
 
-    assert_redirected_to post_url(Post.last)
+    assert_redirected_to root_path
   end
 
   test "should show post" do
@@ -35,7 +30,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update post" do
     patch post_url(@post), params: { post: { post: @post.post } }
-    assert_redirected_to post_url(@post)
+    assert_redirected_to root_path
   end
 
   test "should destroy post" do
@@ -43,6 +38,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       delete post_url(@post)
     end
 
-    assert_redirected_to posts_url
+    assert_redirected_to root_path
   end
 end
